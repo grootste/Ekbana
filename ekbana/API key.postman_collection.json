@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "7bae5dad-3916-4148-bd37-93a16a74ec33",
+		"name": "API key",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authgen",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set('authtoken', pm.response.json().body)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/apikey/generate",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"apikey",
+						"generate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authverify",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/apikey/verify",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"apikey",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNhdCIsImlhdCI6MTYzMzg2MDYyM30.-JZ_0APV3i2OoqixTSCGBi6if9l7YjMoD-bOm60avXM",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
